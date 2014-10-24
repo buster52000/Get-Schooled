@@ -18,8 +18,6 @@ public class PhysicsObject {
 	private int collisionRectOffsetX, collisionRectOffsetY, collisionRectHeight, collisionRectWidth;
 	// The image this object will use
 	private Image img;
-	// The object's ID assigned by the world
-	private int objId;
 
 	/**
 	 * Creates a PhysicsObject using the image supplied and the default
@@ -30,11 +28,8 @@ public class PhysicsObject {
 	 * 
 	 * @param img
 	 *            - the image to create the object with
-	 * @param id
-	 *            - the object's id that is assigned by the world
 	 */
-	public PhysicsObject(Image img, int id) {
-		this.objId = id;
+	public PhysicsObject(Image img) {
 		this.img = img;
 		isStatic = true;
 		isSolid = true;
@@ -63,15 +58,13 @@ public class PhysicsObject {
 	 *            - The group that the object will test collisions with
 	 * @param collisionRect
 	 *            - The rectangle used for general collision checking (the x and y coordinates should be the offset from the top left corner of the image)
-	 * @param id - the object's id that is assigned by the world
 	 */
-	public PhysicsObject(Image img, boolean isStatic, boolean isSolid, double gravityModifier, int physicsGroup, Rectangle2D collisionRect, int id) {
+	public PhysicsObject(Image img, boolean isStatic, boolean isSolid, double gravityModifier, int physicsGroup, Rectangle2D collisionRect) {
 		this.img = img;
 		this.isStatic = isStatic;
 		this.isSolid = isSolid;
 		this.gravityModifier = gravityModifier;
 		this.physicsGroup = physicsGroup;
-		objId = id;
 		collisionRectOffsetX = (int) collisionRect.getX();
 		collisionRectOffsetY = (int) collisionRect.getY();
 		collisionRectHeight = (int) collisionRect.getHeight();
@@ -94,15 +87,6 @@ public class PhysicsObject {
 	 */
 	public void setImage(Image img) {
 		this.img = img;
-	}
-	
-	/**
-	 * Gets the object's id
-	 * 
-	 * @return objId - the ID
-	 */
-	public int getObjectID() {
-		return objId;
 	}
 	
 	/**
