@@ -1,5 +1,6 @@
 package pburg.tsa.getSchooled.physics;
 
+import java.awt.Polygon;
 import java.awt.geom.Rectangle2D;
 
 import pburg.tsa.getSchooled.Objects.PhysicsObject;
@@ -25,6 +26,18 @@ public class PhysCollision {
 		if (!p1.isSolid() || !p2.isSolid() || !checkGeneralCollision(p1.getCollisionRectangle(o1.getX(), o1.getY()), p2.getCollisionRectangle(o2.getX(), o2.getY())))
 			return false;
 		return advancedObjectCollision(o1, o2);
+	}
+
+	// Zaint or Prad do this
+	/**
+	 * This method should take a polygon as input and check if it is concave. If
+	 * the polygon is concave it must then separate it into convex polygons
+	 * 
+	 * @param polygon - The polygon to check concavity and split
+	 * @return an array of convex polygons based of the input polygon
+	 */
+	public static Polygon[] concaveToConvexPolygon(Polygon polygon) {
+		return null;
 	}
 
 }
