@@ -7,6 +7,14 @@ public class World {
 	private ArrayList<WorldObject> objects;
 	private int nextID;
 
+	/**
+	 * Create new instance of World
+	 * 
+	 * @param initialObjs
+	 * @param worldWidth
+	 * @param worldHeight
+	 * @throws IllegalStateException
+	 */
 	public World(ArrayList<WorldObject> initialObjs, int worldWidth, int worldHeight) throws IllegalStateException {
 		objects = new ArrayList<WorldObject>();
 		nextID = 0;
